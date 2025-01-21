@@ -2,7 +2,7 @@
 
 ## About
 
-Example repo to show the use of large amounts of data stored in CSV files Being hydrated to hierarchical JSON document data. This should enable us to pursue streaming, paging and CSV header localisation.
+Example repo to show how to use large amounts of data stored in CSV files as a source for report data, being output as CSV or hydrated to hierarchical JSON data. The storage format enable streaming, paging and CSV header localisation.
 
 > [!Note]
 > This is a POC and should not be considered production code

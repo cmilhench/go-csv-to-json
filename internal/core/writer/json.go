@@ -6,19 +6,12 @@ import (
 	"fmt"
 	"io"
 	"log"
-
-	"github.com/cm-dev/template/internal/ports"
 )
 
-var _ ports.Writer[any] = (*JsonWriter)(nil)
-
-type JsonWriter struct{}
-
-func (w *JsonWriter) Write(ctx context.Context, writer io.Writer, records <-chan any) error {
+func WriteJson(ctx context.Context, writer io.Writer, records <-chan any) error {
 	if ctx == nil || writer == nil || records == nil {
 		return fmt.Errorf("invalid parameters")
 	}
-
 	for {
 		select {
 		case <-ctx.Done():

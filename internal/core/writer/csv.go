@@ -5,15 +5,9 @@ import (
 	"encoding/csv"
 	"fmt"
 	"io"
-
-	"github.com/cm-dev/template/internal/ports"
 )
 
-var _ ports.Writer[[]string] = (*CsvWriter)(nil)
-
-type CsvWriter struct{}
-
-func (t *CsvWriter) Write(ctx context.Context, writer io.Writer, records <-chan []string) error {
+func WriteCsv(ctx context.Context, writer io.Writer, records <-chan []string) error {
 	if ctx == nil || writer == nil || records == nil {
 		return fmt.Errorf("invalid parameters")
 	}
